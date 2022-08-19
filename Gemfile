@@ -70,3 +70,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem 'figaro', '~> 1.2'
+gem 'flickr', '~> 2.1'

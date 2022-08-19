@@ -1,0 +1,27 @@
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+
+<div class='banner'>
+<h1>Odin Flickr Api</h1>
+</div>
+
+<div class='description'>
+<h2>Find someones photos on flickr by entering their Flickr id (example - 196299009@N03)</h2>
+</div>
+
+<%= form_with url: root_url, method: :get do |form| %>
+  <%= form.label :id, "Flickr id:" %>
+  <%= form.text_field :id %>
+  <div><%= form.submit "Get photos" %></div>
+<% end %>
+
+<% if @photo_urls %>
+  <div class="photos">
+    <% @photo_urls.each do |photo_url| %>
+      <%= image_tag(photo_url) %>
+    <% end %>
+  </div>
+<% end %>
